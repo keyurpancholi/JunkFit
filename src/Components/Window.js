@@ -19,7 +19,7 @@ function Window()
             <h1 id="tile">CountDown Timer</h1>
            
             <h1 id="time">{timerCount}</h1>
-            <div id="stop" >  <button id="bt">Stop</button></div>
+            <div id="stop" >  <button id="bt1">Stop</button></div>
           
         </div>
     )
