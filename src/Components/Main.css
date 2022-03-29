@@ -1,0 +1,65 @@
+section{
+    display: flex;
+    background-color: #ffdbac;
+    height: 550px;
+
+}
+section div{
+  height: 100%;
+  width: 60%;
+}
+#ic{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ic button img{
+    width: 100%;
+    height: 100%;
+    object-position: center;
+
+}
+#ic button{
+    width: 30%;
+    height: 10%;
+    border: none;
+    border-radius: 70%;
+    margin: 8px;
+    background-color: #ffdbac;
+}
+#ic button:hover{
+    opacity: 0.6;
+    transition: 400ms;
+    cursor: pointer;
+}
+#id img{
+    height: 80%;
+    width:80%;
+    border-radius: 70%;
+}
+section h1{
+    font-family: 'Anton',sans-serif;
+    margin-left: 100px;
+    margin-bottom: 0px;
+    font-size: 120px;
+    letter-spacing: 5px;
+    padding-bottom: 2px;
+    color: orange;
+    text-decoration: solid;
+    font-weight: 700;
+    padding-left: 100px;
+    
+    
+}
+section span{
+    margin-left: 100px;
+    color: gray;
+    font-weight: 700;
+    font-size: 23px;
+     text-align: center;
+     margin-top: 0px;
+}
+#imgAr{
+    transition: 600ms ease-in;
+}
+
