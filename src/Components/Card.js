@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDom from "react-dom";
 import ReactCardFlip from "react-card-flip";
 import './Card.css';
 function Card(props)
@@ -14,7 +13,7 @@ function Card(props)
     return(
         <ReactCardFlip isFlipped={isFlipped}   flipDirection="vertical">
             <section id="main" onClick={handlehover}>
-            <img src={props.img}/>
+            <img src={props.img} alt="" />
             <div id="ni">
                 
                 <span  id="type">{props.type}</span>
