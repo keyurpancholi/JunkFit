@@ -1,38 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arvo&family=Exo+2&family=Lobster&family=Roboto+Slab&display=swap');
 #b1{
-    color: white;
+    color: black;
     border: none;
-    background-color: black;
-    font-size: 20px;
+    background-color: #126E82;
+    font-size: 22px;
     margin-right: 20px;
     padding: 12px 20px;
     border-radius: 24px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-weight: 700;
 
 }
 #b2{
-    font-size: 20px;
+    font-size: 22px;
     margin-right: 30px;
     padding: 12px 20px;
     border-radius: 24px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto Slab', serif;
     font-weight: 700;
     border: none;
     margin-left: 0px;
+    background-color: #E8F6EF;
 }
 #bt{
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
     height: 3rem;
     align-items: flex-start;
+
     }
   
     #bt button:hover{
         transition: 400ms;
         cursor: pointer;
-        background-color:brown;
-        color:bisque;
-          transform: translateY(-6px);
+        background-color:#00BCD4;
+        color:white;
+        width: 170px ;
+          transform: translateY(-8px);
+          box-shadow: 2px 3px 8px 4px white;
     }

@@ -1,0 +1,335 @@
+let hotel=[{
+    name:"Dosa",
+    type:"Veg",
+    Carbs:"18.8g",
+    Fats:"3.7g",
+    Protein:2.7,
+    Calorie:"133 ",
+    quantity:1,
+    img:"https://images.news18.com/ibnkhabar/uploads/2021/08/masala-dosa-recipe.jpg",
+    cat:"Fast-Food"
+},
+{
+    name:"Idli",
+    type:"Veg",
+    Carbs:"10g",
+    Fats:"3.7g",
+    Protein:2,
+    Calorie:"78",
+    quantity:2,
+    img:"https://img.onmanorama.com/content/dam/mm/en/food/foodie/images/2019/10/1/idli.jpg.transform/schema-4x3/image.jpg",
+    cat:"Fast-Food"
+},
+{
+    name:"Chole-Bhature",
+    type:"Veg",
+    Carbs:"50.3g",
+    Fats:"20.1g",
+    Protein:10.8,
+    Calorie:"427",
+    quantity:1,
+    img:"https://static.toiimg.com/photo/53314156.cms",
+    cat:"North-Indian"
+},
+{
+    name:"Pav-Bhaji",
+    type:"Veg",
+    Carbs:"57.9g",
+    Fats:"14.5g",
+    Protein:9.4,
+    Calorie:"400 ",
+    quantity:"1 serving",
+    img:"https://www.indianhealthyrecipes.com/wp-content/uploads/2021/11/pav-bhaji.jpg",
+    cat:"Fast-Food"
+}
+,
+   { 
+    name:"Burger",
+    type:"Veg",
+    Carbs:"33",
+    Fats:"14g",
+    Protein:9,
+    Calorie:"313 ",
+    quantity:1,
+    img:"https://assets.cntraveller.in/photos/60ba26c0bfe773a828a47146/4:3/w_1440,h_1080,c_limit/Burgers-Mumbai-Delivery.jpg",
+    cat:"Fast-Food"
+},
+{ 
+    name:"Paneer Paratha",
+    type:"Veg",
+    Carbs:"22.2g",
+    Fats:"13.5g",
+    Protein:6.9,
+    Calorie:"234 ",
+    quantity:1,
+    img:"https://cdn.tarladalal.com/members/9306/big/big_paneer_parathas,_punjabi_paneer_paratha-14043.jpg",
+    cat:"North-Indian"
+},
+{ 
+    name:"Nachos",
+    type:"Veg",
+    Carbs:"70.2g",
+    Fats:"42.4g",
+    Protein:8.5,
+    Calorie:"527",
+    quantity:"1 serving",
+    img:"https://static.toiimg.com/thumb/63625118.cms?width=1200&height=900",
+    cat:"Italian"
+},
+{ 
+    name:"Biryani",
+    type:"Veg",
+    Carbs:"18.5",
+    Fats:"13.5g",
+    Protein:3.4,
+    Calorie:"301 ",
+    quantity:"1 serving",
+    img:"https://i0.wp.com/vegecravings.com/wp-content/uploads/2016/07/veg-biryani-recipe-step-by-step-instructions.jpg?fit=3563%2C2976&quality=65&strip=all&ssl=1",
+    cat:"Rice"
+},
+{ 
+    name:"Pasta",
+    type:"Veg",
+    Carbs:"37",
+    Fats:"1.1g",
+    Protein:7.5,
+    Calorie:"174 ",
+    quantity:"1 serving",
+    img:"https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2020%2F09%2F17%2Fcream-tomato-rigatoni-FT-RECIPE1020.jpg",
+    cat:"Italian"
+},
+{ 
+    name:"Noodles",
+    type:"Veg",
+    Carbs:"25",
+    Fats:"2.1g",
+    Protein:4.5,
+    Calorie:"138 ",
+    quantity:"1 serving",
+    img:"https://hot-thai-kitchen.com/wp-content/uploads/2021/11/chili-garlic-noodles-blog.jpg",
+    cat:"Fast-Food"
+},
+{ 
+    name:"Fried-Rice",
+    type:"Veg",
+    Carbs:"14.7",
+    Fats:"2.3g",
+    Protein:2.5,
+    Calorie:"208 ",
+    quantity:"1 serving",
+    img:"https://www.whiskaffair.com/wp-content/uploads/2018/11/Vegetable-Fried-Rice-2-3.jpg",
+    cat:"Rice"
+},
+{ 
+    name:"Milshake",
+    type:"Chocolate",
+    Carbs:"32",
+    Fats:"3.4g",
+    Protein:8,
+    Calorie:"211 ",
+    quantity:"1 glass",
+    img:"https://www.tarladalal.com/members/9306/procstepimgs/cold-cocoa-milkshake-(8)-8-187201.jpg",
+    cat:"Drinks"
+},
+{
+    name:"Tacos",
+    type:"Veg",
+    Carbs:"44.7g",
+    Fats:"7g",
+    Protein:13,
+    Calorie:"290 ",
+    quantity:"1 serving",
+    img:"https://lh3.googleusercontent.com/ksz1Txwisz2emMkhY0u-21mmhKZq6qxdWJYlDtuYa029M4JsoBpBGTwog1e8ZhyvYZKvdAY2G2SEYXyVQxxbmGurFg=h450",
+    cat:"Fast-Food"
+},
+{
+    name:"Soda",
+    type:"Lemon",
+    Carbs:"33g",
+    Fats:"2.2g",
+    Protein:0.6,
+    Calorie:"164",
+    quantity:"1 serving",
+    img:"https://i.ytimg.com/vi/gc_5g5lN4P4/hqdefault.jpg",
+    cat:"Drinks"
+},
+{
+    name:"Juices",
+    type:"Fresh Fruit",
+    Carbs:"10g",
+    Fats:"1g",
+    Protein:0.8,
+    Calorie:"45",
+    quantity:"1 serving",
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNh2ofIs3Tx4-PXdSSDH0DBgbI2Ko-RPEoLl8ZdgLIVTOb2T3ixCMjj5xvKORwANQdj4A&usqp=CAU",
+    cat:"Drinks"
+},
+{
+    name:"Coffee",
+    type:"Cold",
+    Carbs:"2g",
+    Fats:"0.8g",
+    Protein:0.1,
+    Calorie:"70",
+    quantity:"1 serving",
+    img:"https://www.mygingergarlickitchen.com/wp-content/rich-markup-images/1x1/1x1-cold-coffee-recipe.jpg",
+    cat:"Drinks"
+},
+{
+    name:"Tea",
+    type:"Ice",
+    Carbs:"9g",
+    Fats:"0.1g",
+    Protein:0.1,
+    Calorie:"35",
+    quantity:"1 serving",
+    img:"https://ampmstore.in/wp-content/uploads/2019/02/ice-tea-1.jpg",
+    cat:"Drinks"
+},
+{
+    name:"Mojito",
+    type:"Blueberry",
+    Carbs:"20g",
+    Fats:"0.8g",
+    Protein:0,
+    Calorie:"205",
+    quantity:"1 serving",
+    img:"https://www.o2a.in/wp-content/uploads/sites/2/2020/09/Blue-Curacao-Mojito.png",
+    cat:"Drinks"
+},
+{
+    name:"Spaghetti",
+    type:"Veg",
+    Carbs:"37g",
+    Fats:"2g",
+    Protein:6,
+    Calorie:"158",
+    quantity:"1 serving",
+    img:"https://static.fanpage.it/wp-content/uploads/sites/22/2021/06/spaghetti-bolognese-1200x900.jpg",
+    cat:"Italian"
+},
+{
+    name:"Lasagna",
+    type:"Veg",
+    Carbs:"20g",
+    Fats:"5g",
+    Protein:7,
+    Calorie:"140",
+    quantity:"1 serving",
+    img:"https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-14-scaled.jpg",
+    cat:"Italian"
+},
+{
+    name:"Bruschetta",
+    type:"Veg",
+    Carbs:"15g",
+    Fats:"5g",
+    Protein:5,
+    Calorie:"70",
+    quantity:"1 serving",
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxjCJtOegw9ZhV-V75DgvJLZB-F8hJaWUMNg&usqp=CAU",
+    cat:"Italian"
+},
+{
+    name:"Tikka Masala",
+    type:"Paneer",
+    Carbs:"34g",
+    Fats:"10g",
+    Protein:14,
+    Calorie:"280 ",
+    quantity:"1 serving",
+    img:"https://www.ruchiskitchen.com/wp-content/uploads/2020/12/Paneer-butter-masala-recipe-3-500x375.jpg",
+    cat:"North-Indian"
+},
+{
+    name:"Pizza",
+    type:"Veg",
+    Carbs:"36g",
+    Fats:"10g",
+    Protein:10,
+    Calorie:"285",
+    quantity:"1 slice",
+    img:"https://img.onmanorama.com/content/dam/mm/en/food/features/images/2021/10/17/pizza.jpg",
+    cat:"Italian"
+},
+{
+    name:"Fried Rice",
+    type:"Schezwan ",
+    Carbs:"37.4g",
+    Fats:"18g",
+    Protein:3.8,
+    Calorie:"327",
+    quantity:"1 serving",
+    img:"https://www.pavaniskitchen.com/wp-content/uploads/2021/08/schezwan-veg-fried-rice-500x500.jpg",
+    cat:"Rice"
+},
+{
+    name:"Pulao",
+    type:"Tawa",
+    Carbs:"37.1g",
+    Fats:"7.6g",
+    Protein:5.5,
+    Calorie:"240",
+    quantity:"1 serving",
+    img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ271cWAkJ4bQX88TwidltEoqpaaixSMNQBgA&usqp=CAU",
+    cat:"Rice"
+},
+{
+    name:"Khichdi",
+    type:"Dal",
+    Carbs:"58.1g",
+    Fats:"4.2g",
+    Protein:12.4,
+    Calorie:"320",
+    quantity:"1 serving",
+    img:"https://www.tarladalal.com/td_cont_img/Fada-ni-Khichdi-4.JPG",
+    cat:"Rice"
+},
+{
+    name:"Jeera Rice",
+    type:"Dal Fry",
+    Carbs:"32.6g",
+    Fats:"7g",
+    Protein:13.1,
+    Calorie:"245",
+    quantity:"1 serving",
+    img:"https://yummydine.in/wp-content/uploads/2016/05/images-3-1.jpeg",
+    cat:"Rice"
+},
+{
+    name:"Papdi Chaat",
+    type:"Dahi",
+    Carbs:"36.2g",
+    Fats:"17.1g",
+    Protein:7.6,
+    Calorie:"353",
+    quantity:"1 serving",
+    img:"https://zaykarecipes.com/wp-content/uploads/2016/11/1-Papri-Chaat-n.jpg",
+    cat:"North-Indian"
+},
+{
+    name:"Aloo Kulcha",
+    type:"Methi",
+    Carbs:"34g",
+    Fats:"10g",
+    Protein:5.1,
+    Calorie:"261",
+    quantity:"1 serving",
+    img:"https://i0.wp.com/foodtrails25.com/wp-content/uploads/2018/05/temp-1308.jpg?fit=1600%2C1067&ssl=1",
+    cat:"North-Indian"
+},
+{
+    name:"Churma",
+    type:"Daal Baati",
+    Carbs:"30g",
+    Fats:"12g",
+    Protein:6.8,
+    Calorie:"258",
+    quantity:"1 serving",
+    img:"https://d4t7t8y8xqo0t.cloudfront.net/resized/750X436/eazytrendz%2F2787%2Ftrend20200401133123.jpg",
+    cat:"North-Indian"
+}
+
+ 
+]
+export default hotel

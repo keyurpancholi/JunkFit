@@ -1,0 +1,27 @@
+.allWork{
+    width: 100%;
+    display:flex;
+
+}
+#outer
+{
+    display: flex;
+    flex-direction: column;
+    background: #780206;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #061161, #780206);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 3%;
+    height: 550px;
+    width: 90%;
+    margin: 20px;
+
+   
+}
+#outer h1{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 24px;
+}

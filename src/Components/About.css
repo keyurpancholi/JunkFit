@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arvo&family=Comfortaa&family=Exo+2&family=Lato:wght@700&family=Lobster&family=Montserrat&family=Roboto+Slab&family=Signika+Negative&family=Ubuntu:wght@700&display=swap');
+#about h1{
+font-family: 'Ubuntu', sans-serif;
+margin-top: 40px;
+width: 100%;
+padding: 10px 0px;
+margin: 0px;
+text-align: center;
+background-color: black;
+color: white;
+
+}
+#about ul{
+    list-style: none;
+    width: 100%;
+    padding-left: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#about li{
+    width: 100%;
+    border-bottom: solid 2px gray;
+    font-size: 18px;
+    color:black;
+    padding-bottom: 10px;
+    margin: 5px;
+    font-family: 'Roboto Sald',sans-serif;
+    text-align: left;
+    margin-left: 0px;
+    padding-left: 0px;
+    text-align: center;
+    font-weight: 700;
+}
+#about{
+    border-radius: 0%;
+    background-image: url("https://st.focusedcollection.com/9264440/i/650/focused_193439552-stock-photo-hamburger-fries-chopping-board-blurred.jpg");
+    height: 370px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.96;
+}

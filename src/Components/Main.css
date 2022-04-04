@@ -1,65 +1,41 @@
-section{
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arvo&family=Comfortaa&family=Exo+2&family=Lobster&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Arvo&family=Comfortaa&family=Exo+2&family=Lobster&family=Roboto+Slab&family=Signika+Negative&display=swap');
+#content{
     display: flex;
-    background-color: #ffdbac;
-    height: 550px;
-
-}
-section div{
-  height: 100%;
-  width: 60%;
-}
-#ic{
-    display: flex;
+    background: linear-gradient(to right,rgba(189, 195, 199,0.7), rgba(44, 62, 80,0.9));
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-#ic button img{
-    width: 100%;
-    height: 100%;
-    object-position: center;
+    opacity: 0.9;
+    height: 350px;
+    width: 40%;
+    border-radius: 10%;
 
 }
-#ic button{
-    width: 30%;
-    height: 10%;
-    border: none;
-    border-radius: 70%;
-    margin: 8px;
-    background-color: #ffdbac;
-}
-#ic button:hover{
-    opacity: 0.6;
-    transition: 400ms;
-    cursor: pointer;
-}
-#id img{
-    height: 80%;
-    width:80%;
-    border-radius: 70%;
-}
-section h1{
+#content h1{
     font-family: 'Anton',sans-serif;
-    margin-left: 100px;
-    margin-bottom: 0px;
-    font-size: 120px;
+    font-size: 130px;
+    color: #132C33;
     letter-spacing: 5px;
-    padding-bottom: 2px;
-    color: orange;
-    text-decoration: solid;
-    font-weight: 700;
-    padding-left: 100px;
-    
-    
-}
-section span{
-    margin-left: 100px;
-    color: gray;
-    font-weight: 700;
-    font-size: 23px;
-     text-align: center;
-     margin-top: 0px;
-}
-#imgAr{
-    transition: 600ms ease-in;
-}
+    margin: 0px;
+    padding-bottom: 0px;
 
+
+}
+#content span{
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    font-family:'Signika Negative', sans-serif; 
+    letter-spacing: 1px;
+}
+#id{
+ display: flex;
+ justify-content: center;
+ background-color: black;
+ align-items: center;
+ height: 575px;
+
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}

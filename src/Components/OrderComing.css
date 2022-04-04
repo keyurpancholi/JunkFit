@@ -1,0 +1,43 @@
+#MyOrder{
+    height: 600px;
+    width:900px;
+    background: #EF3B36;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #EF3B36);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #EF3B36); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 40px;
+margin-left: 70px;
+}
+#MyOrder h1{
+    background: #1D4350;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #A43931, #1D4350);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #A43931, #1D4350); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-size: 40px;
+color: white;
+width: 98%;
+padding: 10px;
+text-align: center;
+
+}
+#MyOrder span{
+    color: #A43931;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#MyOrder h2{
+    color: #FFFFFF;
+
+
+}
+#MyOrder div{
+   margin-bottom: 40px;
+ 
+
+}
+#MyOrder button{
+    margin-left: 0px;
+}

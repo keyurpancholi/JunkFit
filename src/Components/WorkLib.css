@@ -1,25 +1,25 @@
-#content{
-    background-color: #ffdbac;
+#AllEx{
+    background-image: url("https://wallpaperboat.com/wp-content/uploads/2020/04/running-wallpaper-hd.jpg");
     margin: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
-   
-    
+    height: 1800px;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.9;
+
 }
 #section{
  display: flex;
  flex-direction: row;
  justify-content: flex-start;
  width: 100%;
- border-bottom: 1px solid brown;
- height: 400px;
+ height: 90%;
 }
-.ex{
-    
-    color: brown;
-    font-size: 26px;
-    margin-bottom: 0px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+#workCat{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }
+

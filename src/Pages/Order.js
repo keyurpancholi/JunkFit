@@ -1,13 +1,13 @@
 import React from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
-import Hotels from "../Components/Hotels";
+import Food from "../Components/Food";
 function Order()
 {
     return(
         <div> 
         <Nav/>
-        <Hotels/>
+        <Food/>
         <Footer/>
         </div>
     
