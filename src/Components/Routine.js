@@ -21,7 +21,7 @@ function Routine(props){
     reps={ChestEx[count].reps} 
     cal={ChestEx[count].cal} 
     name={ChestEx[count].name} 
-    type={ChestEx[count].type}/>
+    type={ChestEx[count].type} onClick={props.onClick}/>
 
     const fit2=<Fit video={ArmsEx[count].video}  
     sets={ArmsEx[count].sets}  
@@ -29,7 +29,7 @@ function Routine(props){
     reps={ArmsEx[count].reps} 
     cal={ArmsEx[count].cal} 
     name={ArmsEx[count].name} 
-    type={ArmsEx[count].type}/>
+    type={ArmsEx[count].type} onClick={props.onClick}/>
 
     const fit3=<Fit video={LegsEx[count].video}  
     sets={LegsEx[count].sets}  
@@ -37,7 +37,7 @@ function Routine(props){
     reps={LegsEx[count].reps} 
     cal={LegsEx[count].cal} 
     name={LegsEx[count].name} 
-    type={LegsEx[count].type}/>
+    type={LegsEx[count].type} onClick={props.onClick}/>
 
 
     const fit4=<Fit video={AbsEx[count].video}  
@@ -46,7 +46,7 @@ function Routine(props){
     reps={AbsEx[count].reps} 
     cal={AbsEx[count].cal} 
     name={AbsEx[count].name} 
-    type={AbsEx[count].type}/>
+    type={AbsEx[count].type} onClick={props.onClick}/>
 
     const fit5=<Fit video={BackEx[count].video}  
     sets={BackEx[count].sets}  
@@ -54,7 +54,7 @@ function Routine(props){
     reps={BackEx[count].reps} 
     cal={BackEx[count].cal} 
     name={BackEx[count].name} 
-    type={BackEx[count].type}/>
+    type={BackEx[count].type} onClick={props.onClick}/>
 
     let routines = []
     if(props.chest) routines.push(fit1)

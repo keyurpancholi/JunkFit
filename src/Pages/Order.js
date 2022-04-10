@@ -2,12 +2,12 @@ import React from "react";
 import Nav from "../Components/Nav";
 import Footer from "../Components/Footer";
 import Food from "../Components/Food";
-function Order()
+function Order(props)
 {
     return(
         <div> 
         <Nav/>
-        <Food/>
+        <Food />
         <Footer/>
         </div>
     

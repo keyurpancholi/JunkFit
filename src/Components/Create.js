@@ -1,17 +1,23 @@
-import React ,{useState}from "react";
+import React ,{Fragment, useContext, useState}from "react";
 import {useForm } from "react-hook-form";
 import './Create.css'
 import Routine from "./Routine";
+import Modal from "./Modal";
+import { ex } from "./ex";
+import Carts from "./context";
 function Create()
-{   
+{   const ctx=useContext(Carts);
     const {register ,handleSubmit}=useForm();
     const [routineData, setRoutineData] = useState({})
-    const[height,setHeight]=useState(600)
-
+    const [modal,setmodal]=useState(false)
+    const handleModal=()=>{
+        setmodal(!modal)
+    }
+  const burn=<div id="burn">You need to burn {-ctx.defeceitCal} calories</div>
     const Submit=(data)=>{
     
        setRoutineData((prev) => {
-           setHeight(height+580)
+
            let newState =  {...prev, [data.day]: data}
            return newState
        })
@@ -19,13 +25,16 @@ function Create()
     };
 
   return(
-      <section id="Form" style={{height:height}}>
+      <Fragment>
+    {modal && <Modal msg={`You burned ${ex[0].cal} calories`} onClick={handleModal}></Modal>}
+      <section id="Form">
           <h1 className="rec">Create My WorkOut</h1>
            <div>
+               {ctx.defeceitCal<0 && burn}
 
            <form  id="Myform"  onSubmit={handleSubmit(Submit)}>
                <span>
-               <input type="checkbox" onC name="chest" id="chest"  className="select" {...register('chest')} />
+               <input type="checkbox"  name="chest" id="chest"  className="select" {...register('chest')} />
                <label for="chest"  className="input">Chest</label>
                </span>
             <span>
@@ -64,10 +73,11 @@ function Create()
            </div>
            {Object.keys(routineData).map(key => {
                const {day, chest, back, abs, legs, arms} = routineData[key]
-               return <Routine day={day} chest={chest} back={back} abs={abs} legs={legs} arms={arms} />
+               return <Routine onClick ={handleModal} day={day} chest={chest} back={back} abs={abs} legs={legs} arms={arms} />
            })}
 
       </section>
+      </Fragment>
   )
 }
 export default Create;

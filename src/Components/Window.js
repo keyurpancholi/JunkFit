@@ -1,11 +1,13 @@
-import React,{useEffect,useState} from "react";
+import React,{useContext, useEffect,useState} from "react";
 import Fit from "./Fit";
 import {ex} from "./ex";
+import Carts from "./context";
+import Modal from "./Modal";
 import './Window.css'
 
-function Window()
-{
-    const [timerCount, setTimerCount] = useState(60);
+function Window(props)
+{ const ctx=useContext(Carts)
+    const [timerCount, setTimerCount] = useState(5);
     const [stop,setIsStop]=useState(false);
     const [quit,setIsQuit]=useState(false);
  
@@ -22,13 +24,17 @@ function Window()
         }, 1000)
     }
     else{
+        props.onClick();
     setIsQuit(true)
-    }
+    ctx.AddCal(ex[0].cal)
+   
+     }
     }
     else
     {
-    setTimerCount(60);
+    setTimerCount(5);
     setIsStop(false);
+    
     }
 
     },[timerCount])
@@ -40,9 +46,10 @@ function Window()
     }
     const handleQuit=()=>{
         setIsQuit(!quit);
+        
 
     }
-    let work=<Fit video={ex[0].video}  sets={ex[0].sets}  dur={ex[0].dur}  reps={ex[0].reps } cal={ex[0].cal} name={ex[0].name} type={ex[0].type}/>
+    let work=<Fit video={ex[0].video}  sets={ex[0].sets}  dur={ex[0].dur}  reps={ex[0].reps } cal={ex[0].cal} name={ex[0].name} type={ex[0].type} onClick={props.onClick}/>
     
     return quit?work:(
         <div id="window">

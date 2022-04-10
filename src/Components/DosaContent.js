@@ -8,15 +8,15 @@ const DosaContent=[
         img:"https://media.istockphoto.com/photos/interior-of-a-modern-cozy-french-restaurant-picture-id1314951233",
         Rice: {
             quantity:"3/4 cup",
-            cal:95
+            cal:65
         },
         UradDal:{
             quantity:"1/2 cup",
-            cal:40
+            cal:45
         },
         oil: {
             quantity:"1 tsp",
-            cal:20
+            cal:23
         },
         rat: "4 Stars",
         

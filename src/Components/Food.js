@@ -1,8 +1,9 @@
-import React,{useState} from "react";
+import React,{Fragment, useState} from "react";
 import './Food.css'
 import Card from "./Card";
 import hotel from "./Food_array";
-function Food()
+import Modal from "./Modal";
+function Food(props)
     {
        
     const [isfood,setFood]=useState(hotel)
@@ -14,7 +15,8 @@ function Food()
     const [ff,setFf]=useState(false)
     const [drink,setdrink]=useState(false)
     const [Ni,setNi]=useState(false)
-
+    const[MyModal,setModal]=useState(false);
+     
     const all=()=>
     { 
         setFood(hotel)
@@ -42,7 +44,7 @@ function Food()
             setFood( hotel.filter((food)=>food.cat==="North-Indian"))
 
         }
-        setVisible(!visible)
+        setVisible(false)
       }
       const sortByPro=(item)=>
 
@@ -66,7 +68,7 @@ function Food()
             setFood( hotel.filter((food)=>food.cat==="North-Indian"))
 
         }
-        setVisible(!visible)
+        setVisible(false)
       }
         const fastFood=()=>
         {    
@@ -126,17 +128,39 @@ function Food()
         }
         const handleOptions=()=>
         {
-             setVisible(true)
+             setVisible(!visible)
         }
-        const food= isfood.map(hotels=> <Card  img={hotels.img} name={hotels.name} type={hotels.type } Carbs={hotels.Carbs} Protein={hotels.Protein}
-            Fats={hotels.Fats} Calorie={hotels.Calorie} Quantity={hotels.quantity}/>)
-            if(visible===false)
+        const handleModal=()=>
         {
+          setModal(!MyModal)
+        }
+        
+        const food= isfood.map(hotels=> <Card  img={hotels.img} name={hotels.name} type={hotels.type } Carbs={hotels.Carbs} Protein={hotels.Protein}
+            Fats={hotels.Fats} Calorie={hotels.Calorie} quantity={hotels.quantity} price={hotels.price} id={hotels.id} onModal={handleModal}/>)
+         const SortList=(props)=>{
+           return(
+         <span>
+         <ul>
+              <li onClick={props.onClickFirst}>
+                  By Calories
+              </li>
+              <li onClick={props.onClickSecond}>
+                  By Protein
+              </li>
+          </ul>
+         </span>
+           )
+         }
+          
         return(
+          
+         
+        <Fragment>
+            {MyModal && <Modal msg="Added to Cart" onClick={handleModal}/>}
             <section id="menu" style={{height:isheight}}>
                 
               <h1 className="rec">Recommended Food-Items for you</h1>
-              
+             
               <div id="cat">
               <button className="order" onClick={all}>All-Items</button>
                   <button className="order" onClick={fastFood}>Fast-Food</button>
@@ -146,58 +170,21 @@ function Food()
                 <button className="order" onClick={drinks}>Drinks</button>
                 
                 <button className="order" onClick={handleOptions}>Sort-Items</button>
-    
-
-                 
+                  {(visible) && <SortList onClickFirst={sortbycal} onClickSecond={sortByPro}/> }              
                 </div>
-              <section id="food">
+              <section id="food" >
                {food} 
                 
               </section>
 
             </section>
+            </Fragment>
+            
+            
+           
           
         )
-        }
-        else
-        {
-        return(
-            <section id="menu" style={{height:isheight}}>
-                
-              <h1 className="rec">Recommended Food-Items for you</h1>
-              
-              <div id="cat">
-              <button className="order" onClick={all}>All-Items</button>
-                  <button className="order" onClick={fastFood}>Fast-Food</button>
-                <button className="order"  onClick={north}>North Indian</button>
-                <button className="order" onClick={rice}>Rice-Items</button>
-                <button className="order" onClick={Italian}>Italian</button>
-                <button className="order" onClick={drinks}>Drinks</button>
-                
-                <button className="order" onClick={handleOptions}>Sort-Items</button>
-                <span>
-                <ul>
-                     <li onClick={sortbycal}>
-                         By Calories
-                     </li>
-                     <li onClick={sortByPro}>
-                         By Protein
-                     </li>
-                 </ul>
-                </span>
-                 
-
-                 
-                </div>
-              <section id="food">
-               {food} 
-                
-              </section>
-
-            </section>
-        )
-
-    }
+       
 }
 
 

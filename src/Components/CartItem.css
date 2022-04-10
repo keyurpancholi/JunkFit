@@ -1,0 +1,68 @@
+#cart{
+width: 400px;
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+align-items: center;
+background: #BBD2C5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+height: 600px;
+margin: 20px;
+}
+#cart img{
+    height:30%;
+    width: 80%;
+    border-radius: 10px;
+}
+#MyCart{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    color:#85F4FF;
+    width: 100%;
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    text-align: center;
+}
+.CartDetails{
+padding: 5px;
+margin: 0px;
+color: white;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+border-bottom: solid white 1px;
+font-size: 19px;
+
+}
+#CartInfo{
+    list-style: none;
+   padding: 0px;
+}
+#MyCart div{
+    display: flex;
+    justify-content: space-evenly;
+    width: 60%;
+}
+.changeQ{
+    padding: 7px 25px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 4px;
+  
+}
+#trash{
+    width: 30px;
+    height: 40px;
+}
+.changeQ:hover{
+ 
+    transition: 500ms;
+    color: black;
+    background-color: lightgray;
+    cursor: pointer;
+    opacity: 0.9;
+}

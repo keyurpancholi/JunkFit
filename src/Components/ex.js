@@ -1,7 +1,7 @@
 
  export const ex = [{
     video:"https://www.youtube.com/embed/IODxDxX7oi4",
-    cal: "41"   ,
+    cal: 41   ,
     reps:"10-12"  ,
     dur:"60 seconds"  ,
     sets : 4,

@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React,{useState} from "react";
 import ReactCardFlip from "react-card-flip";
 import './Fit.css';
 import Window from "./Window";
@@ -23,7 +23,7 @@ function Fit(props)
         
     };
 
-    let window =<Window /> 
+    let window =<Window  onClick={props.onClick} /> 
 
     return isClick ? window : (
         <ReactCardFlip isFlipped={isFlipped}   flipDirection="vertical">

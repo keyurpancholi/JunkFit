@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './Nav.css'
@@ -10,37 +11,8 @@ function Nav(){
     {
         setAbout(!about);
     }
-    if(about===true)
-    {
     return(
-        <div id="nav">
-        <header id="head">
-        <div id="intro">
-            <i class="fas fa-bars" onClick={change}>
-            </i>
-                <span id="logo">JunkFit</span>
-    
-            </div>
-        <div id="mid">
-            <a href="/" className="links">Home</a>
-            <a href="/workout" className="links">Workout</a>
-            <a href="/orders" className="links">Order</a>
-            <a href="/" className="links">Profile</a>
-        </div>
-        <div id="log">
-        <a href=""><button id="but1">Login</button></a> 
-        <a href=""><button id="but2">Sign Up</button></a> 
-        </div>
-         
-        </header>
-        <About/>
-        </div>
-        
-
-    )
-    }
-    else{
-        return(
+         <Fragment>
             <header id="head">
             <div id="intro">
             <i class="fas fa-bars" onClick={change}>
@@ -49,10 +21,11 @@ function Nav(){
     
             </div>
             <div id="mid">
-                <a href="/" className="links">Home</a>
-                <a href="/workout" className="links">Workout</a>
-                <a href="/orders" className="links">Order</a>
-                <a href="/" className="links">Profile</a>
+            <Link to={"/"} className="links">Home</Link>
+            <Link to={"/workout"} className="links">Workout</Link>
+            <Link to={"/orders"} className="links">Order</Link>
+            <Link to={"/Cart"} className="links">Cart</Link>
+                <Link to={"/"} className="links">Profile</Link>
             </div>
             <div id="log">
             <a href=""><button id="but1">Login</button></a> 
@@ -60,8 +33,10 @@ function Nav(){
             </div>
              
             </header>
+            {(about)&& <About/>}
+            </Fragment>
     
         )
     }
-}
-export default Nav;
+
+  export default Nav;
