@@ -7,6 +7,11 @@ import MyWorkout from './Pages/MyWorkout';
 import Cart from './Components/Cart';
 import Carts from './Components/context';
 import OrderSummary from './Pages/OrderSummary';
+import Login from "./Pages/Login";
+import SignUp from "./Pages/SignUp";
+import Profile from "./Pages/Profile";
+import { AuthProvider } from './AuthContext/AuthContext';
+
 function App() {
   const ctx=useContext(Carts)
   const [food,setFood]=useState(ctx.foodItem)
@@ -14,6 +19,7 @@ function App() {
   const [cal,SetCal]=useState(500)
   
   return (
+    <AuthProvider>
     <Carts.Provider value={ {
       foodItem :food,
       OrderItem:Myorder,
@@ -100,10 +106,13 @@ function App() {
         <Route path="/Cart" element={<Cart></Cart>}></Route>
         <Route path="/workout/create" element={<MyWorkout></MyWorkout>}></Route>
         <Route path="/Cart/Summary" element={<OrderSummary></OrderSummary>}></Route>
-        
+        <Route path="/Login" element={<Login />}></Route>
+          <Route path="/Signup" element={<SignUp />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
       </Routes>
     </BrowserRouter>
     </Carts.Provider>
+    </AuthProvider>
    
   )
 }

@@ -34,7 +34,7 @@ function Main() {
                 <h1>
                     JunkFit
                 </h1>
-                <span>The Morden Solution to Stay Healthy, Happy and Fit</span>
+                <span>The Modern Solution to Stay Healthy, Happy and Fit</span>
                 <Button text1="Order Now" text2="Workout" />
 
             </div>
