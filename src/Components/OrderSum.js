@@ -14,7 +14,7 @@ const ctx=useContext(Carts)
 const handleModal=()=>{
     setvisible(!visible)
 }
-const MyOrders=ctx.OrderItem.map((item)=><OrderItems id={item.id} name={item.name} foodImg={item.foodImg} calories={item.calories} loc={item.loc} hotel={item.hotel} price={item.price} onClick={handleModal}></OrderItems>
+const MyOrders=ctx.OrderItem.map((item)=><OrderItems id={item.id} name={item.name} foodImg={item.foodImg} calories={item.calories} loc={item.loc} hotel={item.hotel} price={item.price} onClick={handleModal} orderId={item.orderId}></OrderItems>
 )
 if(ctx.OrderItem[0]!==undefined)
 {

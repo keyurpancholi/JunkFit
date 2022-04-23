@@ -6,7 +6,7 @@ const OrderItems=(props)=>{
     const ctx= useContext(Carts)
    const handleRemove=()=>{
        
-       ctx.RemoveOrder(props.id);
+       ctx.RemoveOrder(props.orderId);
        props.onClick();
        ctx.AddCal(props.calories);
       

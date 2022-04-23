@@ -7,23 +7,27 @@ import Carts from "./context";
 
 const CartItem=(props)=>
 {  
-    const [Modal,setModal]=useState(false)
-    const ctx=useContext(Carts)
+    
   const[currentQuantity,setQuantity]=useState(props.quantity)
-   const handleAddQuantity=()=>
+  const handleAddQuantity=()=>
    {
        setQuantity((prevState)=>prevState+1)
-
+       
+      
    }
-  
+    useEffect(()=>{
+      props.onPlace(props.id,currentQuantity)
+    },[currentQuantity])
 
    
    const handleSubQuantity=()=>
    {   if(currentQuantity>1)
        setQuantity((prevState)=>prevState-1)
       
+       
 
    }
+  
    const handleDelete=()=>
    {
        props.onDelete(props.id)
@@ -31,21 +35,20 @@ const CartItem=(props)=>
       
 
    }
-   const handleOrder=()=>
-   {
-      
-       setModal(!Modal)
-   }
-   
   
    return(
 
     <Fragment>
-     {(Modal)&& <HotelModal onClick={handleOrder} foodName ={props.name} price={props.price} quan={currentQuantity} totalquan={currentQuantity*props.calories} id={props.id} img={props.image}></HotelModal>}
-       <div id="cart">
+     <div id="cart">
    <h2 id="MyCart">{`Item name : ${props.name}`}</h2>
    <img src={props.image}></img> 
     <ul id="CartInfo">
+    <li className="CartDetails">
+         {` Restaurent :   ${props.hotel}`}
+        </li>
+        <li className="CartDetails">
+         {` Location :   ${props.loc}`}
+        </li>
          <li className="CartDetails">
          {` Total Calories  :   ${props.calories*currentQuantity}`}
         </li>
@@ -53,12 +56,9 @@ const CartItem=(props)=>
         {`Quantity: ${currentQuantity}`}
         </li>
         <li className="CartDetails">
-        {`Amount per item : ${props.price}`}
-        </li>
-        <li className="CartDetails">
         {`Total Amount: ${props.price* currentQuantity}`}
         </li>
-             
+        
              
     </ul>
     <div>
@@ -66,7 +66,7 @@ const CartItem=(props)=>
     <button  onClick={handleSubQuantity} className="changeQ">-</button>
     <button  onClick={handleDelete} className="changeQ">Remove</button></div>
     <div>
-    <button className="order" onClick={handleOrder}>Place Order</button>
+   
     </div> 
     </div>
        

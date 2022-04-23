@@ -1,15 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import './OrderComing.css'
 import Carts from "./context";
 function OrderComing(props){
     const ctx=useContext(Carts)
     const handleClose=()=>{
-        props.onClose()
-        ctx.RemoveFood(props.id)
-       
+        props.onClose() ;
+        for(let items of ctx.OrderItem)
+        {
+            items.type="old"
+        }
+        for(let items of ctx.foodItem)
+        {
+            ctx.RemoveFood(items.id)
+        }
     }
-    
+     
     if(ctx.defeceitCal>=0)
     {
     return(

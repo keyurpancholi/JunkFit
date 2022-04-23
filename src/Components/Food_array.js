@@ -9,7 +9,7 @@ let hotel=[{
     img:"https://images.news18.com/ibnkhabar/uploads/2021/08/masala-dosa-recipe.jpg",
     cat:"Fast-Food",
     price :70,
-    id:1
+   
 },
 {
     name:"Idli",
@@ -22,7 +22,7 @@ let hotel=[{
     img:"https://img.onmanorama.com/content/dam/mm/en/food/foodie/images/2019/10/1/idli.jpg.transform/schema-4x3/image.jpg",
     cat:"Fast-Food",
     price :70,
-    id:2
+    
 }
 
 ,
@@ -37,7 +37,7 @@ let hotel=[{
     img:"https://static.toiimg.com/photo/53314156.cms",
     cat:"North-Indian",
     price :70,
-    id:3
+  
 },
 {
     name:"Pav-Bhaji",

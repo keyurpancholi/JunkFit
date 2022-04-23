@@ -99,6 +99,11 @@ function Nav() {
                 Log out
               </button>
             </Link>
+            <Link to={"/Cart/Summary"}>
+              <button id="but2">
+                History
+              </button>
+            </Link>
           </div>
         ) : (
           <div id="log">

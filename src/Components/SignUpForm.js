@@ -26,7 +26,7 @@ function SignUpForm() {
       setError("");
       setIsLoading(true);
       await signup(emailRef.current.value, passwordRef.current.value);
-      navigate("/")
+      navigate("/Profile")
     } catch {
       setError("Failed to create an account");
     }

@@ -8,9 +8,13 @@ const Carts= React.createContext(
       RemoveOrder :()=>{},
       RemoveCal :()=>{},
       defeceitCal:500,
+      orderId:100,
       AddCal :()=>{
         
-      }
+      },
+    
+      updateItem:()=>{},
+      MyVar:[]
     }
 )
 export default Carts

@@ -2,7 +2,6 @@ import React,{Fragment, useState} from "react";
 import './Food.css'
 import Card from "./Card";
 import hotel from "./Food_array";
-import Modal from "./Modal";
 function Food(props)
     {
        
@@ -130,13 +129,10 @@ function Food(props)
         {
              setVisible(!visible)
         }
-        const handleModal=()=>
-        {
-          setModal(!MyModal)
-        }
+        
         
         const food= isfood.map(hotels=> <Card  img={hotels.img} name={hotels.name} type={hotels.type } Carbs={hotels.Carbs} Protein={hotels.Protein}
-            Fats={hotels.Fats} Calorie={hotels.Calorie} quantity={hotels.quantity} price={hotels.price} id={hotels.id} onModal={handleModal}/>)
+            Fats={hotels.Fats} Calorie={hotels.Calorie} quantity={hotels.quantity} price={hotels.price} id={hotels.id} />)
          const SortList=(props)=>{
            return(
          <span>
@@ -156,7 +152,6 @@ function Food(props)
           
          
         <Fragment>
-            {MyModal && <Modal msg="Added to Cart" onClick={handleModal}/>}
             <section id="menu" style={{height:isheight}}>
                 
               <h1 className="rec">Recommended Food-Items for you</h1>

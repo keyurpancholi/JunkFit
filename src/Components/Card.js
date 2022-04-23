@@ -1,5 +1,6 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ReactCardFlip from "react-card-flip";
+import { Link } from "react-router-dom";
 import './Card.css';
 import Carts from "./context";
 function Card(props)
@@ -10,17 +11,17 @@ function Card(props)
     {
         setIsFlipped(!isFlipped);
     };
-
+    useEffect(()=>{
+      ctx.Reset();
+    },[])
+      const handleClick=()=>{
+       ctx.updateItem(props.name)
+       console.log(props.name)
+       
+      }
    
   
-
-   const handleCart=()=>
-   {  
-       
-    ctx.AddFood(props.id,props.name,props.price,props.Calorie,props.quantity,props.img)
-    props.onModal();
     
-    }
     return(
         <ReactCardFlip isFlipped={isFlipped}   flipDirection="vertical">
             <section id="main" >
@@ -31,7 +32,7 @@ function Card(props)
                 <span  id="type">{props.type}</span>
                 <span id="name">{props.name}</span>
                 </div>
-                <div id="flip"><button className= "order" onClick={handleCart}>Add to Cart</button>
+                <div id="flip"><Link to={"/orders/Hotels"}><button className= "order" onClick={handleClick}>Check Variety</button></Link>
                 <button  onClick={handlehover}  className="order">Read More</button></div>
                </section>
 
