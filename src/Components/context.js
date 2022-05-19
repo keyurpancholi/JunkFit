@@ -14,7 +14,10 @@ const Carts= React.createContext(
       },
     
       updateItem:()=>{},
-      MyVar:[]
+      MyVar:[],
+      MyLoc:"",
+      updateLoc:()=>{},
+      Sort:()=>{}
     }
 )
 export default Carts

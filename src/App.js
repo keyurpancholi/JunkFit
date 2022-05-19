@@ -13,14 +13,17 @@ import Profile from "./Pages/Profile";
 import Hotels from './Pages/Hotels';
 import FoodContent from './Components/FoodContent';
 import { AuthProvider } from './AuthContext/AuthContext';
-
+import DisplayProfile from './Pages/DisplayProfile';
+import Loc from './Components/Locations';
 function App() {
   const ctx=useContext(Carts)
   const [food,setFood]=useState(ctx.foodItem)
   const [Myorder,setorder]=useState(ctx.OrderItem)
   const [cal,SetCal]=useState(0)
   const [id,setId]=useState(0);
-   const [Item,setItem]=useState(FoodContent)
+   const [Item,setItem]=useState(FoodContent);
+   const[Loc,setMyLoc]=useState("")
+   const [cat,setcat]=useState("")
   return (
     <AuthProvider>
     <Carts.Provider value={ {
@@ -30,6 +33,8 @@ function App() {
       Reset:()=>{
         setItem(FoodContent);
       },
+     
+      
       MyVar:Item,
       foodItem :food,
       OrderItem:Myorder,
@@ -39,7 +44,10 @@ function App() {
       RemoveCal:(calories)=>SetCal((prevState)=>prevState-calories),
       AddCal:(calories)=>SetCal((prevState)=>prevState+calories)
 ,
-     
+     MyLoc:Loc,
+     updateLoc:(Location)=>{
+     setMyLoc(Location)
+     },
      AddFood:(index,hotel,loc,Name,Price,Calorie,image,quantity)=>
    {   
      
@@ -127,6 +135,7 @@ function App() {
         <Route path="/Login" element={<Login />}></Route>
           <Route path="/Signup" element={<SignUp />}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
+          <Route path="/DisplayProfile" element={<DisplayProfile />}></Route>
       </Routes>
     </BrowserRouter>
     </Carts.Provider>

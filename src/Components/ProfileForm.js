@@ -1,17 +1,13 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { collection, query, where ,getDocs} from "firebase/firestore";
 import "./ProfileForm.css";
-import { db } from "../firebase";
+import { auth, db } from "../firebase";
 import Carts from "./context";
 import { Link } from "react-router-dom";
 
 function ProfileForm() {
- /*const calTrack=async()=>{
-    const q = query(collection(db, "JunkFit"), where("cal", "==", 500));
-    return await getDocs(q).docs;
- }*/
+ 
 
-// const [cal, setCal] = useState(0);
+  const [calories,setCal]=useState(0)
   const [height, setHeight] = useState(1);
   const [weight, setWeight] = useState(1);
   const [goalWeight, setGoalWeight] = useState(1);
@@ -21,23 +17,11 @@ function ProfileForm() {
   const[day,setDay]=useState(0);
   const ctx=useContext(Carts)
   const[link ,setLink]=useState("/")
+
   function profileSubmitHandler(e) {
-  
-
     e.preventDefault();
-    db.collection("JunkFit")
-
-      .add({
-        height: height,
-        weight: weight,
-        goalWeight: goalWeight,
-        cal:ctx.defeceitCal,
-        address:add,
-        district:loc,
-        AgeGrp:age,
-        perDaydef:day
-      })
-      .then(() => {
+      
+       
         if(loc==="" || add=="" || height===1 || weight===1 || goalWeight===1 || age===0 ||  day===0)
         {
           alert("Fill entire details to set profile")
@@ -46,23 +30,39 @@ function ProfileForm() {
         else
         {
         alert("Profile updated successfully");
-        ctx.AddCal(-ctx.defeceitCal);
-        ctx.AddCal(age-(weight-goalWeight)*day)
-       }
+        
+       
+       
+        db.collection("JunkFit").doc('JunkFit')
+       .set({
+        height: height,
+        weight: weight,
+        goalWeight: goalWeight,
+        cal:calories,
+        address:add,
+        district:loc,
+        AgeGrp:age,
+        perDaydef:day,
+        uid: auth.currentUser.uid
+      })
+      .then(() => {
+        ctx.updateLoc(loc)
+        ctx.AddCal(-ctx.defeceitCal)
+        ctx.AddCal(calories)
       })
       .catch((error) => {
         alert(error.message);
       });
+      
+        }
+    
+    
   }
-  /*let arr=[]
-  async function getCal(){
-     setCal(await calTrack().cal);
-     console.log(cal);
-  }
+  useEffect(()=>{
+    console.log(calories)
+  },[calories])
 
-  useEffect(async() => {
-      getCal();
-  }, [])*/
+
   const handleAge=(e)=>{
         if(e.target.value=="Child")
         setAge(2000);
@@ -90,6 +90,11 @@ if(loc==="" || add=="" || height===1 || weight===1 || goalWeight===1 || age===0 
 else
 {
   setLink("/")
+  if(weight-goalWeight>=0)
+  setCal(age-(weight-goalWeight)*day)
+  else
+  setCal(age+(goalWeight-weight)*day)
+
 }
 },[loc,add,height,weight,goalWeight,age,day])
 
@@ -211,7 +216,7 @@ else
             required
           ></input>
         </div>
-        <div className="BMI">{(ctx.defeceitCal>0)?`Cal consumption per day left :${ctx.defeceitCal}`:`Excess cal consumed :${-ctx.defeceitCal}`}</div>
+        <div className="BMI">{(calories>0)?`Cal consumption per day left :${calories}`:`Excess cal consumed :${-calories}`}</div>
         <div className="profile-submit">
           <button type="submit" onClick={profileSubmitHandler}>
             Set Profile

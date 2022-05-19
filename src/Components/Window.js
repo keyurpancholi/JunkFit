@@ -24,9 +24,9 @@ function Window(props)
         }, 1000)
     }
     else{
-        props.onClick();
+     props.onClick();
     setIsQuit(true)
-    ctx.AddCal(ex[0].cal)
+    ctx.AddCal(props.cal)
    
      }
     }
@@ -49,7 +49,7 @@ function Window(props)
         
 
     }
-    let work=<Fit video={ex[0].video}  sets={ex[0].sets}  dur={ex[0].dur}  reps={ex[0].reps } cal={ex[0].cal} name={ex[0].name} type={ex[0].type} onClick={props.onClick}/>
+    let work=<Fit video={props.video}  sets={props.sets}  dur={props.dur}  reps={props.reps } cal={props.cal} name={props.name} type={props.type} onClick={props.onClick}/>
     
     return quit?work:(
         <div id="window">
@@ -57,7 +57,6 @@ function Window(props)
            
             <h1 id="time">{timerCount}</h1>
             <div id="stop" >  
-            <img src={ex[0].gif}></img>
             <span>
             <button className="bt1" onClick={handlePause}>Reset</button>
              <button className="bt1" onClick={handleQuit}>Quit</button>

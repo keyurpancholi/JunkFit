@@ -11,7 +11,7 @@ function Routine(props){
     const AbsEx=ex.filter((exs)=>exs.type==="Abs");
     const BackEx=ex.filter((exs)=>exs.type==="Back")
     const [disp,setDisp]=useState();
-    const count=Math.floor(Math.random()*1);
+    const count=Math.floor(Math.random()*2);
     
     
    
@@ -63,8 +63,7 @@ function Routine(props){
     if(props.abs)routines.push(fit4)
     if(props.abs)routines.push(fit5)
      
-    while(routines.length > 3)
-    routines.pop()
+    
 
 
 

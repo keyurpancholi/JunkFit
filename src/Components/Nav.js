@@ -75,7 +75,7 @@ function Nav() {
             </Link>
             <Link to={"/Cart"} className="links">Cart</Link>
             
-            <Link to={"/Profile"} className="links">
+            <Link to={"/DisplayProfile"} className="links">
               Profile
             </Link>
           </div>

@@ -16,8 +16,8 @@ function Card(props)
     },[])
       const handleClick=()=>{
        ctx.updateItem(props.name)
-       console.log(props.name)
-       
+    
+ 
       }
    
   

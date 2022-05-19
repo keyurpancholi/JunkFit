@@ -12,9 +12,9 @@
   background: linear-gradient(to right, #061161, #780206); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     border-radius: 3%;
-    height: 550px;
-    width: 90%;
-    margin: 20px;
+    height: 750px;
+    width: 100%;
+    flex-wrap: wrap;
 
    
 }

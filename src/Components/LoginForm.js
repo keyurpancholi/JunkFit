@@ -17,7 +17,7 @@ const LoginForm = () => {
     try {
       setError("");
       setIsLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
+      const data = await login(emailRef.current.value, passwordRef.current.value);
       navigate("/")
     } catch {
       setError("Failed to login");

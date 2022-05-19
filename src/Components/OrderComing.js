@@ -31,6 +31,7 @@ function OrderComing(props){
         <div>
         <Link to={"/Cart/Summary"}><button className="order"onClick={handleClose}>Order Summary</button></Link>
         <button className="order" onClick={handleClose}>Back To Cart</button>
+        <div>Pay Cash on Delivery</div>
         </div>
       
         </div>
@@ -52,6 +53,7 @@ function OrderComing(props){
         <Link to ={"/workout/create"}><button className="order"onClick={handleClose}> Workout Section</button></Link>
         <Link to={"/Cart/Summary"}><button className="order" onClick={handleClose}>Order Summary</button></Link>
         <button className="order" onClick={handleClose}>Back To Cart</button>
+        <div>Pay Cash on Delivery</div>
         </div>
         </div>
         )

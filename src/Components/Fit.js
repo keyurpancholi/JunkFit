@@ -23,7 +23,7 @@ function Fit(props)
         
     };
 
-    let window =<Window  onClick={props.onClick} /> 
+    let window =<Window  onClick={props.onClick}  video={props.video} cal={props.cal} sets={props.sets} type={props.type} reps={props.reps} dur={props.dur} gif={props.gif} name={props.name}/> 
 
     return isClick ? window : (
         <ReactCardFlip isFlipped={isFlipped}   flipDirection="vertical">

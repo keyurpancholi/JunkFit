@@ -6,7 +6,7 @@ function Food(props)
     {
        
     const [isfood,setFood]=useState(hotel)
-    const [isheight,setHeight]=useState(4000)
+    const [isheight,setHeight]=useState(4500)
     const[visible,setVisible]=useState(false)
     const [filter,setFilter]=useState(false)
     const [Rice,setRice]=useState(false)
@@ -19,7 +19,7 @@ function Food(props)
     const all=()=>
     { 
         setFood(hotel)
-        setHeight(4000)
+        setHeight(4500)
         setFilter(false)
     }
       const sortbycal=()=>
