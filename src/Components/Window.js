@@ -4,14 +4,16 @@ import {ex} from "./ex";
 import Carts from "./context";
 import Modal from "./Modal";
 import './Window.css'
+import { useAuth } from "../AuthContext/AuthContext";
+import { db } from "../firebase";
 
 function Window(props)
 { const ctx=useContext(Carts)
     const [timerCount, setTimerCount] = useState(5);
     const [stop,setIsStop]=useState(false);
     const [quit,setIsQuit]=useState(false);
- 
-
+    const {currentUser} = useAuth()
+    let dcal = ctx.defeceitCal
     useEffect(() => {
         if(stop===false)
         {
@@ -26,7 +28,13 @@ function Window(props)
     else{
      props.onClick();
     setIsQuit(true)
-    ctx.AddCal(props.cal)
+    dcal=dcal+props.cal
+    ctx.AddCal(dcal-ctx.defeceitCal)
+    db.collection("JunkFit").doc(currentUser.uid).update({
+        cal: dcal
+    }).then(() => {
+        console.log('Saved')
+    })
    
      }
     }

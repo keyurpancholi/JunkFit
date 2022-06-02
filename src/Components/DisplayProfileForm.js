@@ -14,7 +14,6 @@ function DisplayProfileForm() {
   const [goalWeight, setGoalWeight] = useState();
   const [height, setHeight] = useState();
   const [perDaydef, setPerDayDef] = useState();
-  const [uid, setUid] = useState();
   const [weight, setWeight] = useState();
   const [goalP, setGoal] = useState();
 
@@ -42,30 +41,32 @@ function DisplayProfileForm() {
   const testHandler4 = () => {
     setTp4(true);
   };
-
+   let dcal=ctx.defeceitCal
   const profileUpdateHandler = async (e) => {
     e.preventDefault();
     if (tp1 == true || tp == true) {
-      ctx.AddCal(-ctx.defeceitCal)
+     
       if (weight - goalWeight >= 0)
-        ctx.AddCal(AgeGrp - (weight - goalWeight) * perDaydef)
+        dcal=AgeGrp - (weight - goalWeight) * perDaydef
 
       else
-        ctx.AddCal(AgeGrp + (goalWeight - weight) * perDaydef)
+        dcal=(AgeGrp + (goalWeight - weight) * perDaydef)
     }
+    ctx.AddCal(dcal-ctx.defeceitCal)
+    
 
     console.log(ctx.defeceitCal)
 
-    db.collection("JunkFit").doc("JunkFit").set({
+    db.collection("JunkFit").doc(currentUser.uid).set({
       height: height,
       weight: weight,
       goalWeight: goalWeight,
-      cal: ctx.defeceitCal,
+      cal: dcal,
       address: address,
       district: district,
       AgeGrp: AgeGrp,
       perDaydef: perDaydef,
-      uid: uid,
+      uid: currentUser.uid,
     }).then(() => {
       ctx.updateLoc(district)
       setTp(false)
@@ -79,15 +80,12 @@ function DisplayProfileForm() {
     })
   }
 
-
+  const handleH = (e) => {
+    setHeight(e.target.value)
+  }
 
   const handleW = (e) => {
-
     setWeight(e.target.value)
-
-
-
-
   }
   const handleGw = (e) => {
     setGoalWeight(e.target.value)
@@ -97,7 +95,7 @@ function DisplayProfileForm() {
       .get()
       .then((snapshot) => {
         snapshot.docs.forEach((doc) => {
-          if (doc.id == "JunkFit") {
+          if (doc.id == currentUser.uid) {
             let tp = doc.data();
 
             setAgeGrp(tp.AgeGrp)
@@ -106,8 +104,10 @@ function DisplayProfileForm() {
             setDistrict(tp.district);
             setGoalWeight(tp.goalWeight);
             setWeight(tp.weight);
-            setUid(tp.uid);
             setPerDayDef(tp.perDaydef);
+            setCal(tp.cal)
+            ctx.AddCal(tp.cal-ctx.defeceitCal)
+            
 
           }
         });
@@ -127,7 +127,7 @@ function DisplayProfileForm() {
           <h3><label>Height (in cm)</label></h3>
           <div>{height}</div>
           <button id="but" onClick={testHandler4}>Edit</button>
-          {tp4 && <input type="number" value={height} required></input>}
+          {tp4 && <input type="number" value={height} onChange={handleH} required></input>}
         </div>
         <div className="profile-details">
           <h3><label>Weight(in kgs)</label></h3>

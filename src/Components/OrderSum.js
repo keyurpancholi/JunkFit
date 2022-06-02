@@ -3,7 +3,10 @@ import Carts from "./context";
 import './OrderSum.css'
 import Modal from "./Modal";
 import OrderItems from "./OrderItems";
+import { useAuth } from "../AuthContext/AuthContext";
+import { db } from "../firebase";
 const OrderSum=()=>{
+    
 const handleOrders=()=>{
     console.log(ctx.OrderItem);
     console.log(visible)

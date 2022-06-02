@@ -1,14 +1,24 @@
 import React, { createContext, Fragment, useContext, useState } from "react";
 import Carts from "./context";
 import './CartItem.css';
+import { useAuth } from "../AuthContext/AuthContext";
+import { db } from "../firebase";
 const OrderItems=(props)=>{
-  
     const ctx= useContext(Carts)
+    const {currentUser} = useAuth()
+    let dcal = ctx.defeceitCal
+   
    const handleRemove=()=>{
        
        ctx.RemoveOrder(props.orderId);
        props.onClick();
-       ctx.AddCal(props.calories);
+       dcal=dcal+props.calories
+       db.collection("JunkFit").doc(currentUser.uid).update({
+           cal: dcal
+       }).then(() => {
+           console.log('Saved')
+       })
+      
       
    }
  

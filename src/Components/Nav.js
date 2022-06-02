@@ -101,7 +101,7 @@ function Nav() {
             </Link>
             <Link to={"/Cart/Summary"}>
               <button id="but2">
-                History
+              History
               </button>
             </Link>
           </div>
